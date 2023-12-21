@@ -5,7 +5,11 @@
 
 trigger:
 - main
-
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '17'
+    jdkArchitectureOption: 'x86'
+    jdkSourceOption: 'PreInstalled'
 pool: devsu-selfhosted
  
 
