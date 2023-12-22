@@ -26,7 +26,11 @@ steps:
   inputs:
     versionSpec: '17'
     jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: '/home/gaparedes/jdk/jdk-17_linux-x64_bin.tar.gz'
+    jdkDestinationDirectory: '/home/gaparedes/jdk/binaries'
+    cleanDestinationDirectory: true
+    createExtractDirectory: false
 
 - task: Maven@4
   inputs:
