@@ -70,7 +70,7 @@ steps:
     namespace: 'devsu'
     command: 'apply'
     useConfigurationFile: true
-    configuration: '**/demo-devops-java.yml'
+    configuration: './demo-devops-java.yml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Container Registry'
     dockerRegistryEndpoint: 'devsu-DockerHub'
