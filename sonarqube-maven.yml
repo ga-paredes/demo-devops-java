@@ -70,7 +70,7 @@ steps:
     namespace: 'devsu'
     command: 'apply'
     useConfigurationFile: true
-    configuration: './devsu-webapp.yml'
+    configuration: '**/devsu-webapp.yml'
     secretType: 'dockerRegistry'
     containerRegistryType: 'Container Registry'
     dockerRegistryEndpoint: 'devsu-DockerHub'
