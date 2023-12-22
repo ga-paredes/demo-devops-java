@@ -22,6 +22,12 @@ steps:
       sonar.projectKey=Devsu_Project_Devsu_Project_AYyPU4TSN5VCzSy8aEM6
       sonar.projectName=Devsu Project
 
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '17'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
