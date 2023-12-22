@@ -16,11 +16,9 @@ steps:
 - task: JavaToolInstaller@0
   inputs:
     versionSpec: '17'
-    jdkArchitectureOption: 'x86'
-    jdkSourceOption: 'LocalDirectory'
-    jdkFile: '/home/gaparedes/jdk/jdk-17_linux-x64_bin.tar.gz'
-    jdkDestinationDirectory: '/tmp/jdk'
-    cleanDestinationDirectory: true
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
 - task: Maven@3
   displayName: "Maven create jar package"
   inputs:
