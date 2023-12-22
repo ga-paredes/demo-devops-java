@@ -49,4 +49,11 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'devsu-DockerHub'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
+
 
