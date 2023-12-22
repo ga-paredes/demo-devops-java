@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-devops-java
+spec:
+  selector:
+    matchLabels:
+      app: demo-devops-java
+  template:
+    metadata:
+      labels:
+        app: demo-devops-java
+    spec:
+      containers:
+      - name: demo-devops-java
+        image: "gaparedes/devsu"
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-devops-java-svc
+spec:
+  selector:
+    app: demo-devops-java
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-devops-java-ingress
+  annotations:
+    kubernetes.io/ingress.class: azure/application-gateway
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/swagger-ui.html
+        backend:
+          service:
+            name: demo-devops-java-svc
+            port:
+              number: 8000
+        pathType: Exact
