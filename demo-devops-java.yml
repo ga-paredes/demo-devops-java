@@ -29,7 +29,7 @@ spec:
     app: demo-devops-java
   ports:
   - protocol: TCP
-    port: 80
+    port: 8000
     targetPort: 8000
 
 ---
@@ -40,7 +40,7 @@ metadata:
   name: demo-devops-java-ingress
   annotations:
     kubernetes.io/ingress.class: azure/application-gateway
-    appgw.ingress.kubernetes.io/backend-path-prefix: "/api/swagger-ui/index.html"
+    appgw.ingress.kubernetes.io/backend-path-prefix: "/api/swagger-ui.html"
 spec:
   rules:
   - http:
