@@ -46,7 +46,6 @@ metadata:
 
 spec:
   rules:
-  - host: 13.68.243.235
   - http:
       paths:
       - path: /api
