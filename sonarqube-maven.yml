@@ -67,7 +67,7 @@ steps:
   inputs:
     connectionType: 'Kubernetes Service Connection'
     kubernetesServiceEndpoint: 'devsu-aks'
-    namespace: 'devsu'
+    namespace: 'devsu-project'
     command: 'apply'
     useConfigurationFile: true
     configuration: './demo-devops-java.yml'
