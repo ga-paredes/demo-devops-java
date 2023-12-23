@@ -63,12 +63,16 @@ steps:
       $(tag)
       latest
 
-- task: KubernetesManifest@1
+- task: Kubernetes@1
   inputs:
-    action: 'deploy'
-    connectionType: 'kubernetesServiceConnection'
-    kubernetesServiceConnection: 'devsu-kube'
+    connectionType: 'Kubernetes Service Connection'
+    kubernetesServiceEndpoint: 'devsu-kube'
     namespace: 'devsu-project'
-    manifests: './demo-devops-java.yml'
+    command: 'apply'
+    useConfigurationFile: true
+    configuration: './demo-devops-java.yml'
+    secretType: 'dockerRegistry'
+    containerRegistryType: 'Container Registry'
+    dockerRegistryEndpoint: 'devsu-DockerHub'
 
 
