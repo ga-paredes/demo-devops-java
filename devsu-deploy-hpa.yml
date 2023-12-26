@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-devops-java
+spec:
+  selector:
+    matchLabels:
+      app: demo-devops-java
+  template:
+    metadata:
+      labels:
+        app: demo-devops-java
+    spec:
+      containers:
+      - name: demo-devops-java
+        image: "gaparedes/devsu"
+        resources:
+          limits:
+            cpu: "1"
+          requests:
+            cpu: "0.5"
+        ports:
+        - containerPort: 8000
+          protocol: TCP
+
